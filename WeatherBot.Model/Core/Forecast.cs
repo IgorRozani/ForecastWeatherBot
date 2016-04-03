@@ -2,6 +2,11 @@
 {
     public class Forecast
     {
+        public Forecast()
+        {
+            City = new City();
+        }
+
         public City City { get; set; }
         public double LowestTemperature { get; set; }
         public double HighestTemperature { get; set; }

@@ -8,6 +8,9 @@ namespace WeatherBot.WeatherService
     {
         public static Forecast ConvertToForecast(RootObject rootObject)
         {
+            if (rootObject == null)
+                return null;
+
             var forecast = new Forecast
             {
                 City = ConvertRootObjectToCity(rootObject)
@@ -19,7 +22,7 @@ namespace WeatherBot.WeatherService
                 forecast.LowestTemperature = rootObject.MainInformation.LowestTemperature;
             }
 
-            if (rootObject.Weather.Any())
+            if (rootObject.Weather != null && rootObject.Weather.Any())
             {
                 var weather = rootObject.Weather.FirstOrDefault();
                 forecast.Weather = weather.Main;

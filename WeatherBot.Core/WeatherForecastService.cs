@@ -34,9 +34,9 @@ namespace WeatherBot.Core
         private string BuildMessage(Forecast forecast)
         {
             var messageBuilder = new StringBuilder();
-            messageBuilder.AppendLine($"{forecast.City.Name} - {forecast.City.Country}: {forecast.Weather}, {forecast.WeatherDescription}. ");
-            messageBuilder.AppendLine($"Lowest temperature: {forecast.LowestTemperature}ºC. ");
-            messageBuilder.AppendLine($"Highest temperature: {forecast.HighestTemperature}ºC.");
+            messageBuilder.Append($"{forecast.City.Name} - {forecast.City.Country}: {forecast.Weather}, {forecast.WeatherDescription}. ");
+            messageBuilder.Append($"Lowest temperature: {forecast.LowestTemperature}ºC. ");
+            messageBuilder.Append($"Highest temperature: {forecast.HighestTemperature}ºC.");
 
             return messageBuilder.ToString();
         }
